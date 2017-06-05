@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import YTSearch from 'youtube-api-search'
-
 import SearchBar from './components/search_bar'
-
 const API_KEY = 'AIzaSyBBB93xpLMhtPLkEJ4EHpIGn664nELFfk0'
 
 YTSearch({key: API_KEY, term: 'scubadiving'}, (data) => {console.log(data)})
@@ -11,12 +9,14 @@ YTSearch({key: API_KEY, term: 'scubadiving'}, (data) => {console.log(data)})
 // create a new component that shoud produce some HTML
 // this const App is setting a function and is returning JSX: html looking code which is actually JS
 // we use const and not var because we do not expect this to change (we do not do "App = 5" lateron or so)
- const App = () => {
-   return (
-     <div>
-      <SearchBar />
-     </div>
-   )
+ class App extends Component {
+   render() {
+     return (
+       <div>
+        <SearchBar />
+       </div>
+     )
+   }
  }
 
 // take this component's generated HTML and put it into the page (in the DOM)
