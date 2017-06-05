@@ -13,8 +13,8 @@ constructor(props) {
 
   this.state = { videos: [] }
 
-  YTSearch({key: API_KEY, term: 'scubadiving'}, (data) => {
-    this.setState({ videos: data})
+  YTSearch({key: API_KEY, term: 'scubadiving'}, (videos) => {
+    this.setState({ videos })
   }) // sets the intial state of videos to the search 'scubadiving'
 
   console.log(this)
