@@ -9,10 +9,12 @@ class SearchBar extends Component {
 
   render() {
     // we ALLWAYS manipulate the state with this.setState!
+    // by adding value and reffering it to this.state.term the state is actually only really being changed, previously it was only triggering an event but not really changing the input value
     return (
       <div>
-        <input onChange={ event => this.setState({ term: event.target.value })} />
-        Value of the input: { this.state.term }
+        <input
+          value={ this.state.term }
+          onChange={ event => this.setState({ term: event.target.value })} />
       </div>
     )
   }
