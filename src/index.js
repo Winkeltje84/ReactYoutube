@@ -17,27 +17,28 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     };
+  }
 
+  videoSearch(term) {
     YTSearch({key: API_KEY, term: 'scubadiving'}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       });
-    }) // sets the intial state of videos to the search 'scubadiving'
-
+    })
   }
 
- render() {
-   return (
-     <div>
-      <SearchBar />
-      <VideoDetail video={this.state.selectedVideo} />
-      <VideoList
-        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-        videos={this.state.videos}/>
-     </div>
-   )
- }
+  render() {
+    return (
+      <div>
+        <SearchBar />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          videos={this.state.videos}/>
+      </div>
+    )
+  }
 }
 
 // take this component's generated HTML and put it into the page (in the DOM)
