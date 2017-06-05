@@ -1,25 +1,27 @@
 import React, { Component } from 'react'
 
 class SearchBar extends Component {
-  constructor(props) { // all js classed have a function called constructor, which is called automatically when a class is constructed
-    super(props) // the parent component is called with super()
+  constructor(props) {
+    super(props)
 
-    this.state = { term: ''} // creating a new object and pushing it to this.state, in this case an empty string
+    this.state = { term: ''}
   }
 
   render() {
-    // we ALLWAYS manipulate the state with this.setState!
-    // by adding value and reffering it to this.state.term the state is actually only really being changed, previously it was only triggering an event but not really changing the input value
     return (
       <div className="search-bar">
         <h6>Search Youtube</h6>
         <input
           value={ this.state.term }
-          onChange={ event => this.setState({ term: event.target.value })} />
+          onChange={ event => this.onInputChange(event.target.value) } />
       </div>
     )
   }
-}
 
+  onInputChange(term) {
+    this.setState({term})
+    this.props.onSearchTermChange(term)
+  }
+}
 
 export default SearchBar
