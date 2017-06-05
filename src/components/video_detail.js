@@ -5,12 +5,8 @@ const VideoDetail = ({video}) => {
     return <div>Loading...</div>
   }
 
-  console.log('first video')
-  console.log(video)
-  console.log(video.snippet.title)
   const videoId = video.id.videoId
-  console.log(videoId)
-  const url = 'https://www.youtube.com/embed/' + videoId
+  const url = `https://www.youtube.com/embed/${videoId}`
   console.log(url)
 
   return (
