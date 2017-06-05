@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+const API_KEY = 'AIzaSyBBB93xpLMhtPLkEJ4EHpIGn664nELFfk0'
+
 // create a new component that shoud produce some HTML
 // this const App is setting a function and is returning JSX: html looking code which is actually JS
 // we use const and not var because we do not expect this to change (we do not do "App = 5" lateron or so)
